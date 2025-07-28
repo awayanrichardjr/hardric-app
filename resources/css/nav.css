@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1000;
 }
 
 .navigation :where(.nav-links) {
@@ -13,6 +14,19 @@
 
 .navigation :where(.nav-sidebar) {
     display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -1px -2px 3px var(--color-gray-100);
+}
+.navigation :where(.nav-sidebar) li:nth-child(1) a {
+    width: 100%;
+
+    display: flex;
+    justify-content: end;
 }
 
 .navigation :where(ul) a {
@@ -30,7 +44,6 @@
 .navigation :where(.nav-menu) {
     display: none;
 }
-
 @media screen and (max-width: 768px) {
     .navigation :where(.nav-links) {
         display: none;
