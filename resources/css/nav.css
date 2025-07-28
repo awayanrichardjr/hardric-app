@@ -1,0 +1,41 @@
+.navigation {
+    background-color: white;
+    box-shadow: 1px 2px 3px var(--color-gray-100);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation :where(.nav-links) {
+    display: flex;
+}
+
+.navigation :where(.nav-sidebar) {
+    display: none;
+}
+
+.navigation :where(ul) a {
+    display: flex;
+    padding: 1rem 2rem;
+    color: var(--color-gray-500);
+    transition: 0.2s ease-in-out;
+}
+
+.navigation :where(ul) a:hover {
+    color: black;
+    transform: translateY(-2px);
+}
+
+.navigation :where(.nav-menu) {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .navigation :where(.nav-links) {
+        display: none;
+    }
+    .navigation :where(.nav-menu) {
+        display: flex;
+    }
+}
